@@ -128,9 +128,10 @@ int main()
   char a[100]={};
   {
     int i;
+   if(Serial.available()>0){
     for(i=0;i<100;i++)
     {
-      scanf("%c",&a[i]);
+      a[i]=Serial.read()-'0'
       if(int(a[i])>=97&&int(a[i])<=128&&int(a[i])==32&&int(a[i])==13)
       {
         continue;
@@ -140,6 +141,7 @@ int main()
         break;
       }
     }
+   }
     for(i=0;i<100;i++)
     {
       s(a[i]);
